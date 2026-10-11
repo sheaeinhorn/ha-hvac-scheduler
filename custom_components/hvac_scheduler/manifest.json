@@ -3,11 +3,11 @@
   "name": "HVAC Scheduler",
   "codeowners": ["@sheaeinhorn"],
   "config_flow": true,
-  "dependencies": [],
+  "dependencies": ["frontend", "http"],
   "documentation": "https://github.com/sheaeinhorn/ha-hvac-scheduler",
   "integration_type": "service",
   "iot_class": "calculated",
   "issue_tracker": "https://github.com/sheaeinhorn/ha-hvac-scheduler/issues",
   "requirements": [],
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

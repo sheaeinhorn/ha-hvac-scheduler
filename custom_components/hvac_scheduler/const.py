@@ -1,6 +1,8 @@
 """Constants for HVAC Scheduler."""
 
 DOMAIN = "hvac_scheduler"
+# Keep in sync with manifest.json "version".
+VERSION = "1.2.0"
 
 CONF_TIME = "time"
 CONF_ENABLED = "enabled"

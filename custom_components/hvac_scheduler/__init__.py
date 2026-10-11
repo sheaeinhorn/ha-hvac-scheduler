@@ -2,8 +2,12 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import voluptuous as vol
 
+from homeassistant.components.frontend import add_extra_js_url
+from homeassistant.components.http import StaticPathConfig
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import ATTR_ENTITY_ID, Platform
 from homeassistant.core import HomeAssistant, ServiceCall
@@ -26,11 +30,14 @@ from .const import (
     MODES,
     SERVICE_TOGGLE,
     SERVICE_UPDATE,
+    VERSION,
 )
 
 PLATFORMS = [Platform.SENSOR]
 
 CONFIG_SCHEMA = cv.config_entry_only_config_schema(DOMAIN)
+
+CARD_FILES = ["hvac-scheduler-time-card.js", "hvac-scheduler-slider-card.js"]
 
 UPDATE_SCHEMA = vol.Schema(
     {
@@ -72,7 +79,14 @@ def _schedule_entries(hass: HomeAssistant, call: ServiceCall) -> list[ConfigEntr
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType) -> bool:
-    """Register the services."""
+    """Register the services and the dashboard cards."""
+    www = Path(__file__).parent / "www"
+    await hass.http.async_register_static_paths(
+        [StaticPathConfig(f"/{DOMAIN}/{name}", str(www / name), False) for name in CARD_FILES]
+    )
+    for name in CARD_FILES:
+        # Version query string so browsers load the new cards after an update.
+        add_extra_js_url(hass, f"/{DOMAIN}/{name}?v={VERSION}")
 
     async def handle_update(call: ServiceCall) -> None:
         changes = {k: v for k, v in call.data.items() if k != ATTR_ENTITY_ID}

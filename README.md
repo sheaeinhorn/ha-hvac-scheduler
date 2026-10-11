@@ -15,6 +15,43 @@ Settings are stored in the config entry, so they survive Home Assistant restarts
 
 Edit a schedule from the UI with **Configure** on its entry, or with the service below.
 
+## Time card
+
+A small time picker for one schedule. It comes with the integration and loads automatically, so you don't need a separate install or dashboard resource. Find it in the card picker as *HVAC Scheduler Time*, or use YAML:
+
+```yaml
+type: custom:hvac-scheduler-time-card
+entity: sensor.morning
+name: Morning      # optional
+hide_name: false   # optional
+hour_mode: 12      # optional: 12 or 24, defaults to your profile setting
+minute_step: 5     # optional
+font_size: 26      # optional: number size in px, or any CSS size like 2rem
+```
+
+- Use the arrows to change hours and minutes, and the AM/PM button to switch halves of the day.
+- Tap the hour or minute to type it; phones open a number keypad. Enter saves and Esc cancels.
+- Changes are saved a second after you stop clicking.
+
+## Slider card
+
+A Bubble Card style slider for a schedule's cool or heat setpoint. It also comes with the integration. Find it in the card picker as *HVAC Scheduler Slider*, or use YAML:
+
+```yaml
+type: custom:hvac-scheduler-slider-card
+entity: sensor.morning
+attribute: cool_setpoint   # or heat_setpoint
+name: Cool                 # optional
+icon: mdi:snowflake        # optional
+min: 60                    # optional, default 50 °F / 10 °C
+max: 85                    # optional, default 90 °F / 32 °C
+step: 1                    # optional
+color: "#2b9af9"           # optional fill color
+```
+
+- Drag (or tap) anywhere on the card. The value is saved when you let go.
+- Arrow keys work when the card has keyboard focus.
+
 ## Service: `hvac_scheduler.update_schedule`
 
 Only the fields you pass are changed.
