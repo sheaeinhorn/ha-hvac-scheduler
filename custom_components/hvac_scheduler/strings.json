@@ -48,6 +48,19 @@
         "on": "On",
         "off": "Off"
       }
+    },
+    "attribute": {
+      "options": {
+        "enabled": "Enabled",
+        "sunday": "Sunday",
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "mode": "Mode (on/off)"
+      }
     }
   },
   "services": {
@@ -102,6 +115,16 @@
         "mode": {
           "name": "Mode",
           "description": "New mode value."
+        }
+      }
+    },
+    "toggle": {
+      "name": "Toggle",
+      "description": "Flip a yes/no setting on a schedule (enabled, a day, or mode on/off). Handy for dashboard buttons.",
+      "fields": {
+        "attribute": {
+          "name": "Attribute",
+          "description": "Which setting to flip."
         }
       }
     }

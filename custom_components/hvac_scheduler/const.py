@@ -18,6 +18,9 @@ MODE_OFF = "off"
 MODES = [MODE_ON, MODE_OFF]
 
 SERVICE_UPDATE = "update_schedule"
+SERVICE_TOGGLE = "toggle"
+
+ATTR_ATTRIBUTE = "attribute"
 
 DEFAULTS = {
     CONF_TIME: "07:00:00",

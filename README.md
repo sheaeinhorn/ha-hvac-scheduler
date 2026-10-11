@@ -33,6 +33,20 @@ data:
   mode: "on"
 ```
 
+## Service: `hvac_scheduler.toggle`
+
+Flips one setting: `enabled`, a day (`sunday` … `saturday`), or `mode` (on ↔ off). It's useful for dashboard buttons, because tap actions can't use templates.
+
+```yaml
+tap_action:
+  action: perform-action
+  perform_action: hvac_scheduler.toggle
+  target:
+    entity_id: sensor.testing
+  data:
+    attribute: sunday
+```
+
 ## Automation example
 
 Because the state is a timestamp, use the normal time trigger. It only fires on enabled days.

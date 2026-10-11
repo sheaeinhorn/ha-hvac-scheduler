@@ -49,3 +49,24 @@ update_schedule:
           options:
             - "on"
             - "off"
+
+toggle:
+  target:
+    entity:
+      integration: hvac_scheduler
+  fields:
+    attribute:
+      required: true
+      selector:
+        select:
+          translation_key: attribute
+          options:
+            - "enabled"
+            - "sunday"
+            - "monday"
+            - "tuesday"
+            - "wednesday"
+            - "thursday"
+            - "friday"
+            - "saturday"
+            - "mode"
