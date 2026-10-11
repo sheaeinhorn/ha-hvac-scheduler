@@ -1,0 +1,109 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add schedule",
+        "data": {
+          "name": "Name",
+          "time": "Time",
+          "enabled": "Enabled",
+          "sunday": "Sunday",
+          "monday": "Monday",
+          "tuesday": "Tuesday",
+          "wednesday": "Wednesday",
+          "thursday": "Thursday",
+          "friday": "Friday",
+          "saturday": "Saturday",
+          "cool_setpoint": "Cool setpoint",
+          "heat_setpoint": "Heat setpoint",
+          "mode": "Mode"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Edit schedule",
+        "data": {
+          "time": "Time",
+          "enabled": "Enabled",
+          "sunday": "Sunday",
+          "monday": "Monday",
+          "tuesday": "Tuesday",
+          "wednesday": "Wednesday",
+          "thursday": "Thursday",
+          "friday": "Friday",
+          "saturday": "Saturday",
+          "cool_setpoint": "Cool setpoint",
+          "heat_setpoint": "Heat setpoint",
+          "mode": "Mode"
+        }
+      }
+    }
+  },
+  "selector": {
+    "mode": {
+      "options": {
+        "on": "On",
+        "off": "Off"
+      }
+    }
+  },
+  "services": {
+    "update_schedule": {
+      "name": "Update schedule",
+      "description": "Update one or more attributes of a schedule. Only the fields you pass are changed; values persist across restarts.",
+      "fields": {
+        "time": {
+          "name": "Time",
+          "description": "New time value."
+        },
+        "enabled": {
+          "name": "Enabled",
+          "description": "New enabled value."
+        },
+        "sunday": {
+          "name": "Sunday",
+          "description": "New sunday value."
+        },
+        "monday": {
+          "name": "Monday",
+          "description": "New monday value."
+        },
+        "tuesday": {
+          "name": "Tuesday",
+          "description": "New tuesday value."
+        },
+        "wednesday": {
+          "name": "Wednesday",
+          "description": "New wednesday value."
+        },
+        "thursday": {
+          "name": "Thursday",
+          "description": "New thursday value."
+        },
+        "friday": {
+          "name": "Friday",
+          "description": "New friday value."
+        },
+        "saturday": {
+          "name": "Saturday",
+          "description": "New saturday value."
+        },
+        "cool_setpoint": {
+          "name": "Cool setpoint",
+          "description": "New cool setpoint value."
+        },
+        "heat_setpoint": {
+          "name": "Heat setpoint",
+          "description": "New heat setpoint value."
+        },
+        "mode": {
+          "name": "Mode",
+          "description": "New mode value."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+update_schedule:
+  target:
+    entity:
+      integration: hvac_scheduler
+  fields:
+    time:
+      selector:
+        time:
+    enabled:
+      selector:
+        boolean:
+    sunday:
+      selector:
+        boolean:
+    monday:
+      selector:
+        boolean:
+    tuesday:
+      selector:
+        boolean:
+    wednesday:
+      selector:
+        boolean:
+    thursday:
+      selector:
+        boolean:
+    friday:
+      selector:
+        boolean:
+    saturday:
+      selector:
+        boolean:
+    cool_setpoint:
+      selector:
+        number:
+          min: 40
+          max: 100
+          mode: box
+    heat_setpoint:
+      selector:
+        number:
+          min: 40
+          max: 100
+          mode: box
+    mode:
+      selector:
+        select:
+          translation_key: mode
+          options:
+            - "on"
+            - "off"
